@@ -732,7 +732,7 @@ def main():
         "qnli": "classification",
         "rte": "classification",
         "wnli": "classification",
-        "livedoor": "classfication",
+        "livedoor": "classification",
     }
 
     if args.local_rank == -1 or args.no_cuda:
