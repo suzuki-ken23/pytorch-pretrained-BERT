@@ -132,7 +132,7 @@ class LiveDoorProcessor(DataProcessor):
         for (i, line) in enumerate(lines):
             if i == 0:
                 idx_text = line.index('text')
-                idx_label = line.index('line')
+                idx_label = line.index('label')
             else:
                 guid = "%s-%s" % (set_type, i)
                 text_a = ts.convert_to_unicode(line[idx_text])
