@@ -624,6 +624,10 @@ def main():
                         type=str,
                         required=True,
                         help="The output directory where the model predictions and checkpoints will be written.")
+    parser.add_argument("--vocab_file",
+                        default=None,
+                        type=str,
+                        help="vocab_file.txt")
 
     ## Other parameters
     parser.add_argument("--cache_dir",
