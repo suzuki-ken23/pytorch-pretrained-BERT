@@ -40,6 +40,8 @@ from pytorch_pretrained_bert.modeling import BertForSequenceClassification, Bert
 from pytorch_pretrained_bert.tokenization import BertTokenizer
 from pytorch_pretrained_bert.optimization import BertAdam, WarmupLinearSchedule
 
+sys.path.append('/content/mytorch/pytorch-pretrained-BERT/pytorch_pretrained_bert/')
+
 import tokenization_sentencepiece as ts
 
 logger = logging.getLogger(__name__)
