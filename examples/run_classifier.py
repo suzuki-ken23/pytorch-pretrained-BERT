@@ -628,6 +628,10 @@ def main():
                         default=None,
                         type=str,
                         help="vocab_file.txt")
+    parser.add_argument("--wiki_model",
+                        default=None,
+                        type=str,
+                        help="wiki_model")
 
     ## Other parameters
     parser.add_argument("--cache_dir",
@@ -780,7 +784,7 @@ def main():
     num_labels = len(label_list)
 
     #tokenizer = BertTokenizer.from_pretrained(args.bert_model, do_lower_case=args.do_lower_case)
-    tokenizer = ts.FullTokenizer(args.bert_model, args.vocab_file, do_lower_case=args.do_lower_case)
+    tokenizer = ts.FullTokenizer(args.wiki_model, args.vocab_file, do_lower_case=args.do_lower_case)
 
     train_examples = None
     num_train_optimization_steps = None
@@ -924,7 +928,7 @@ def main():
         # Load a trained model and vocabulary that you have fine-tuned
         model = BertForSequenceClassification.from_pretrained(args.output_dir, num_labels=num_labels)
         #tokenizer = BertTokenizer.from_pretrained(args.output_dir, do_lower_case=args.do_lower_case)
-        tokenizer = ts.FullTokenizer(args.bert_model, args.vocab_file, do_lower_case=args.do_lower_case)
+        tokenizer = ts.FullTokenizer(args.wiki_model, args.vocab_file, do_lower_case=args.do_lower_case)
     else:
         model = BertForSequenceClassification.from_pretrained(args.bert_model, num_labels=num_labels)
     model.to(device)
