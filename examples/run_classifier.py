@@ -558,7 +558,7 @@ def simple_accuracy(preds, labels):
 def acc_and_f1(preds, labels, task_name=None):
     acc = simple_accuracy(preds, labels)
     if task_name == "livedoor":
-        f1 = f1_score(y_true=labels, y_pred=preds, average='samples')
+        f1 = f1_score(y_true=labels, y_pred=preds, average='weighted')
     else:
         f1 = f1_score(y_true=labels, y_pred=preds)
     return {
