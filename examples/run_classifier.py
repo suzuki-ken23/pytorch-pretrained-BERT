@@ -993,6 +993,7 @@ def main():
                     preds[0], logits.detach().cpu().numpy(), axis=0)
 
         eval_loss = eval_loss / nb_eval_steps
+        logger.info("preds=%s", str(preds))
         preds = preds[0]
         if output_mode == "classification":
             preds = np.argmax(preds, axis=1)
