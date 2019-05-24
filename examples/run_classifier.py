@@ -994,6 +994,7 @@ def main():
 
         eval_loss = eval_loss / nb_eval_steps
         logger.info("preds=%s", str(preds))
+        logger.info("preds[0]=%s", str(preds[0]))
         preds = preds[0]
         if output_mode == "classification":
             preds = np.argmax(preds, axis=1)
